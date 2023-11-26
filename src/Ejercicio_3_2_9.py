@@ -74,6 +74,7 @@ def main():
 
     print('\nPROGRAMA PARA LA GESTIÓN DE FACTURAS PENDIENTES DE COBRO')
 
+    # ENTRADA
     accion = pedir_accion()
 
     while accion != '3':
@@ -81,10 +82,11 @@ def main():
         if accion == '1':
             facturas, pendiente = nueva_factura(facturas, pendiente)
 
+        # PROCESO
         elif accion == '2':
             facturas, cobrado, pendiente = pagar_factura(facturas, cobrado, pendiente)
 
-        
+        # SALIDA
         print(f'\nCobrado hasta el momento: {cobrado}€\nPendiente de cobro: {pendiente}€')
         accion = pedir_accion()
 
